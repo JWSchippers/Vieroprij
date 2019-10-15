@@ -1,0 +1,159 @@
+<html>
+    <head>
+
+        <style>
+            table {
+                overflow: hidden;
+                display: table;
+                border: 4px solid black;
+                white-space: normal;
+                line-height: normal;
+                border-spacing: 0px;
+                font-variant: normal;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            td {
+                border: 4px solid black;
+                width: 50px;
+                height: 50px;
+            } 
+
+            td:hover {
+                background-color: cadetblue;
+                border: 1px solid white;
+            }
+
+            tr:hover {
+                background-color: cadetblue;
+                border-color: cadetblue;
+            }
+
+            td, th {
+                position: relative;
+            }
+            td:hover::after,
+            th:hover::after {
+                content: "";
+                position: absolute;
+                background-color: cadetblue;
+                left: 0;
+                top: -5000px;
+                height: 10000px;
+                width: 100%;
+                z-index: -1;
+            }
+        
+        </style>
+
+
+        <script>
+            var klik = 1;
+
+            function speelbeurt(plek) {
+                if(klik == 1) {
+                    plek.style.backgroundColor = "blue";
+                    document.getElementById("commentaar").innerHTML = "Rood is aan de beurt";
+                    klik--;
+                    //console.log(klik);
+                } else {
+                    plek.style.backgroundColor = "red";
+                    document.getElementById("commentaar").innerHTML = "Blauw is aan de beurt";
+                    klik++;
+                    //console.log(klik);
+                }
+            }
+            var geklikt = 0;
+
+            function dubbelGeklikt(gekliktePlek, geklikt) {
+                if(geklikt == 1) {
+                    alert("Hier heb je al geklikt");
+                    klik++;
+                    console.log(geklikt);
+                } else {
+                    klik--;
+                    console.log(geklikt);
+                }
+            }
+        
+        </script>
+
+    </head>
+
+
+    <body>
+
+        
+        <table>
+            <tr class="rij1">
+                <td id=11 onclick="speelbeurt(this)" onclick="dubbelGeklikt(this, 1)"></td>
+                <td id=12 onclick="speelbeurt(this)"></td>
+                <td id=13 onclick="speelbeurt(this)"></td>
+                <td id=14 onclick="speelbeurt(this)"></td>
+                <td id=15 onclick="speelbeurt(this)"></td>
+                <td id=16 onclick="speelbeurt(this)"></td>
+                <td id=17 onclick="speelbeurt(this)"></td>
+            </tr>
+            <tr class="rij2">
+                <td id=21 onclick="speelbeurt(this)"></td>
+                <td id=22 onclick="speelbeurt(this)"></td>
+                <td id=23 onclick="speelbeurt(this)"></td>
+                <td id=24 onclick="speelbeurt(this)"></td>
+                <td id=25 onclick="speelbeurt(this)"></td>
+                <td id=26 onclick="speelbeurt(this)"></td>
+                <td id=27 onclick="speelbeurt(this)"></td>
+            </tr>
+            <tr class="rij3">
+                <td id=31 onclick="speelbeurt(this)"></td>
+                <td id=32 onclick="speelbeurt(this)"></td>
+                <td id=33 onclick="speelbeurt(this)"></td>
+                <td id=34 onclick="speelbeurt(this)"></td>
+                <td id=35 onclick="speelbeurt(this)"></td>
+                <td id=36 onclick="speelbeurt(this)"></td>
+                <td id=37 onclick="speelbeurt(this)"></td>
+            </tr>
+            <tr class=rij3>
+                <td onclick="speelbeurt(this)"></td>
+                <td onclick="speelbeurt(this)"></td>
+                <td onclick="speelbeurt(this)"></td>
+                <td onclick="speelbeurt(this)"></td>
+                <td onclick="speelbeurt(this)"></td>
+                <td onclick="speelbeurt(this)"></td>
+                <td onclick="speelbeurt(this)"></td>
+            </tr>
+            <tr class="rij4">
+                <td onclick="speelbeurt(this)"></td>
+                <td onclick="speelbeurt(this)"></td>
+                <td onclick="speelbeurt(this)"></td>
+                <td onclick="speelbeurt(this)"></td>
+                <td onclick="speelbeurt(this)"></td>
+                <td onclick="speelbeurt(this)"></td>
+                <td onclick="speelbeurt(this)"></td>
+            </tr>
+            <tr class="rij5">
+                <td onclick="speelbeurt(this)"></td>
+                <td onclick="speelbeurt(this)"></td>
+                <td onclick="speelbeurt(this)"></td>
+                <td onclick="speelbeurt(this)"></td>
+                <td onclick="speelbeurt(this)"></td>
+                <td onclick="speelbeurt(this)"></td>
+                <td onclick="speelbeurt(this)"></td>
+            </tr>
+            <tr class="rij6">
+                <td onclick="speelbeurt(this)"></td>
+                <td onclick="speelbeurt(this)"></td>
+                <td onclick="speelbeurt(this)"></td>
+                <td onclick="speelbeurt(this)"></td>
+                <td onclick="speelbeurt(this)"></td>
+                <td onclick="speelbeurt(this)"></td>
+                <td onclick="speelbeurt(this)"></td>
+            </tr>
+        </table>
+<br>
+<hr>
+        <div id="commentaar" align="center">Blauw mag eerst</div>
+
+    </body>
+
+</html>
